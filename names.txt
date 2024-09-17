@@ -1,0 +1,2 @@
+List:['apple,banana,car,dog,elephant']
+tuple:('apple,banana,car,dog,elephant',)
