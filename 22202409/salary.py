@@ -31,15 +31,14 @@ def salary_max():
     return salary_min
 
 def menu():
-    choice=int(input('''
-                     1-add
-                     2-delete
-                     3-sum
-                     4-avg
-                     5-max
-                     6=min
-                     7-exit
-                     your choice....'''))
+    choice=int(input('''1-add
+2-delete
+3-sum
+4-avg
+5-max
+6=min
+7-exit
+your choice....'''))
     if choice == 1:
         salary=float (input('enter the salary:'))
         salary_add(salary)
