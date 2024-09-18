@@ -39,14 +39,26 @@ print(find_sum(first=10,second=20))
 print(find_sum(first=10,second=20,third=30))
 print(find_sum(first=10,second=20,third=30,fourth=40,fifth=50))'''
 #factorial using recursion
-def fact(N):
+'''def fact(N):
     
     if N<=1:#base/edge case
         return 1
     return N*fact(N-1)
 print(fact(5))
-print(fact(6))
+print(fact(6))'''
 
+import math
+def is_prime(N):
+    N_sqrt=int(math.sqrt(N))
+    for i in range (2,N_sqrt+1):
+        if N%i==0:
+            return "Not a prime"
+    return "prime"
+print(is_prime(5))
+print(is_prime(51))
+print(is_prime(61))
+print(is_prime(60))
+print(is_prime(7))
 
 
 
