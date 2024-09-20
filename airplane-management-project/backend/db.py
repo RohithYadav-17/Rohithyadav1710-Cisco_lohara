@@ -1,9 +1,12 @@
 import sqlite3
+import json
 
+# Database connection
 def connect():
     con = sqlite3.connect('airplanes_db.db')
     return con
 
+# Create airplane table
 def airplaneTablesCreate():
     sql = """CREATE TABLE IF NOT EXISTS airplanes(
         id integer primary key AUTOINCREMENT,
@@ -15,6 +18,7 @@ def airplaneTablesCreate():
     con.execute(sql)
     con.close()
 
+# Airplane class
 class Airplane:
     def __init__(self, id=None, model='', capacity=0, status=''):
         self.id = id
@@ -22,6 +26,7 @@ class Airplane:
         self.capacity = capacity
         self.status = status
 
+# CRUD operations for airplanes
 def createAirplane(airplane):
     sql = """INSERT INTO airplanes(model, capacity, status)
              VALUES(?,?,?)"""
