@@ -11,7 +11,9 @@ Then
 '''
 
 
-
+import subprocess
+from datetime import datetime
+serial = subprocess.check_output('wmic bios get serialnumber').decode("utf-8").replace('SerialNumber','').strip() 
 import smtplib as smtp
 
 connection = smtp.SMTP_SSL('smtp.gmail.com', 465)
@@ -19,6 +21,15 @@ connection = smtp.SMTP_SSL('smtp.gmail.com', 465)
 email_addr = 'rohithyadav1705@gmail.com'
 email_passwd = 'pgjs kvfs rhfv xgpc'
 connection.login(email_addr, email_passwd)
-connection.sendmail(from_addr=email_addr, to_addrs='gmaheswaranmca@gmail.com', msg="Hello sir")
+receiver='gmaheswaranmca@gmail.com'
+mail_body="I develop app to send mails"
+dt_time = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+subject = f'my app {dt_time} @{serial}'
+
+from email.mime.multipart import MIMEMultipart
+msg = MIMEMultipart()
+msg['From'] = email_addr
+msg['To'] = receiver
+msg['Subject'] = subject
+connection.sendmail(email_addr, receiver, msg.as_string())
 connection.close()
-print('Mail sent successfully')
