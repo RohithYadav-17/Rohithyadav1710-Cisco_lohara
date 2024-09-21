@@ -1,0 +1,46 @@
+[
+    {
+        "flight_number": "123",
+        "flight_name": "Air India",
+        "capacity": 200,
+        "seats": {
+            "premium": {
+                "window": 9,
+                "middle": 4,
+                "aisle": 6
+            },
+            "business": {
+                "window": 20,
+                "middle": 9,
+                "aisle": 10
+            },
+            "regular": {
+                "window": 70,
+                "middle": 40,
+                "aisle": 30
+            }
+        }
+    },
+    {
+        "flight_number": "12",
+        "flight_name": "Boeing",
+        "capacity": 300,
+        "seats": {
+            "premium": {
+                "window": 15,
+                "middle": 6,
+                "aisle": 9
+            },
+            "business": {
+                "window": 30,
+                "middle": 15,
+                "aisle": 15
+            },
+            "regular": {
+                "window": 105,
+                "middle": 60,
+                "aisle": 44
+            }
+        }
+    }
+]
